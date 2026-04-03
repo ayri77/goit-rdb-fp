@@ -62,7 +62,7 @@ CREATE TABLE infectious_cases (
     Number_cholera_cases BIGINT NULL
 );
 
-LOAD DATA LOCAL INFILE 'C:/Users/pbori/Documents/Coureses/Neoversity/Databases/Homework/goit-rdb-fp/data/infectious_cases.csv'
+LOAD DATA LOCAL INFILE 'C:/Users/pbori/Documents/Courses/Neoversity/Databases/Homework/goit-rdb-fp/data/infectious_cases.csv'
 INTO TABLE infectious_cases
 FIELDS TERMINATED BY ','
 ENCLOSED BY '"'
@@ -288,7 +288,7 @@ DROP FUNCTION IF EXISTS year_difference;
 DELIMITER //
 CREATE FUNCTION year_difference(input_year INT)
 RETURNS INT
-DETERMINISTIC
+NOT DETERMINISTIC
 BEGIN
     RETURN TIMESTAMPDIFF(
         YEAR,
